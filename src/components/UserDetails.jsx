@@ -14,18 +14,17 @@ function UserDetails() {
             setLoading(false);
         });
     }, [id]);
+   if (loading){
+    return <div>Loading...</div>
+   }
    return (
-    <>
-    {loading? <div>Loading...</div> : 
     <div>
-       
         <p>Name: {user.name}</p>
-    <p>Username: {user.username}</p>
-    <p>Email: {user.email}</p>
-    <p>Phone: {user.phone}</p>
-    <p>Website: {user.website}</p>
-        </div>}
-    </>
+        <p>Username: {user.username}</p>
+        <p>Email: {user.email}</p>
+        <p>Phone: {user.phone}</p>
+        <p>Website: {user.website}</p>
+    </div>
    )
 }
 
